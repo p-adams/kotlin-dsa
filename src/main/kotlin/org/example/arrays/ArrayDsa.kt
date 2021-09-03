@@ -13,12 +13,16 @@ fun twoSum(numbs: List<Int>, target: Int): Boolean {
     }
     return false;
 }
-// sorted list solution: O(n) runtime, O(1) space
+// two sum sorted list solution: O(n) runtime, O(1) space
 fun sortedTwoSum(sortedNumbs: List<Int>, target: Int): Boolean {
     for(n in 0 until sortedNumbs.size - 1) {
         if(sortedNumbs[n] + sortedNumbs[n + 1] == target) {
             return true
         }
     }
+    return false
+}
+// two sum sorted list: O(log n) runtime, O(1) space
+fun binarySearchSortedTwoSum(sortedNumbs: List<Int>, target: Int): Boolean {
     return false
 }
