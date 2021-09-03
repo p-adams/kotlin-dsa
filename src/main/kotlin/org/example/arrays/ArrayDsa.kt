@@ -26,3 +26,8 @@ fun sortedTwoSum(sortedNumbs: List<Int>, target: Int): Boolean {
 fun binarySearchSortedTwoSum(sortedNumbs: List<Int>, target: Int): Boolean {
     return false
 }
+
+// binary search helper
+fun binarySearch(n: List<Int>, target: Int, start: Int): Int {
+    return -1;
+}
