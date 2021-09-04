@@ -24,10 +24,30 @@ fun sortedTwoSum(sortedNumbs: List<Int>, target: Int): Boolean {
 }
 // two sum sorted list: O(log n) runtime, O(1) space
 fun binarySearchSortedTwoSum(sortedNumbs: List<Int>, target: Int): Boolean {
+    for (index in sortedNumbs.indices) {
+        val result = binarySearch(sortedNumbs, target - sortedNumbs[index], index + 1 )
+        if(result != -1) {
+            return true
+        }
+    }
     return false
 }
 
 // binary search helper
 fun binarySearch(n: List<Int>, target: Int, start: Int): Int {
-    return -1;
+    var start = start
+    var end = n.size - 1
+    while(start < end) {
+        val mid = (start + end) / 2
+        when {
+            target < n[mid] -> {
+                end = mid - 1
+            }
+            else -> {
+                start = mid + 1
+            }
+        }
+    }
+
+    return if(start == end && n[start] == target) start else -1
 }

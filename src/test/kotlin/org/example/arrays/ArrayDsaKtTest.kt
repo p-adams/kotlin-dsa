@@ -14,6 +14,12 @@ class ArrayDsaKtTest : TestCase() {
         assertEquals(false, sortedTwoSum(numbs2, 5))
     }
     fun testBinarySearchSortedTwoSum() {
-        assertEquals(false, binarySearchSortedTwoSum(numbs1, 5))
+        assertEquals(false, binarySearchSortedTwoSum(numbs1, 12))
+        assertEquals(true, binarySearchSortedTwoSum(numbs1, 3))
+    }
+
+    fun testBinarySearch() {
+        assertEquals(-1, binarySearch(numbs1, 4, 0))
+        assertEquals(4, binarySearch(numbs1, 5, 0))
     }
 }
