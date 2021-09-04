@@ -48,6 +48,17 @@ fun binarySearch(n: List<Int>, target: Int, start: Int): Int {
             }
         }
     }
-
     return if(start == end && n[start] == target) start else -1
+}
+
+// two sum: data structure design
+// design TwoSum class that supports find(target): Int and add(el): Unit
+class TwoSum() {
+    private val nums = mutableListOf<Int>()
+    fun find(target: Int): Int {
+        return -1
+    }
+    fun add(el: Int) {
+        nums.add(el)
+    }
 }
