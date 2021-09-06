@@ -55,7 +55,24 @@ fun binarySearch(n: List<Int>, target: Int, start: Int): Int {
 // design TwoSum class that supports find(target): Int and add(el): Unit
 class TwoSum() {
     private val nums = mutableListOf<Int>()
+    // use two-pointer solutions O(n) runtime and O(1) space
     fun find(target: Int): Int {
+        var start = 0;
+        var finish = nums.size - 1
+        while (start < finish) {
+            val sum = nums[start] + nums[finish]
+            when {
+                sum < target -> {
+                    start++
+                }
+                sum > target -> {
+                    finish--
+                }
+                sum === target -> {
+                    return 1;
+                }
+            }
+        }
         return -1
     }
     fun add(el: Int) {
