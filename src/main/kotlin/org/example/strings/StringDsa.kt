@@ -1,4 +1,5 @@
 package org.example.strings
 
-class StringDsa {
+fun isPalindrome(s: String): Boolean {
+    return false;
 }
