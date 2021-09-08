@@ -16,4 +16,9 @@ class StringDsaKtTest : TestCase() {
         assertEquals(false, isPalindrome(p4))
         assertEquals(true, isPalindrome(p5))
     }
+
+    fun testStrStr() {
+        assertEquals(0, strStr("anna", "ann"))
+        assertEquals(0, strStr("kayak", "kaya"))
+    }
 }

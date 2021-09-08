@@ -16,3 +16,8 @@ fun isPalindrome(s: String): Boolean {
     }
     return true;
 }
+// C strstr: Returns a pointer to the first occurrence of str2 in str1,
+// or a null pointer if str2 is not part of str1.
+fun strStr(str1: String, str2: String): Int {
+    return -1
+}
