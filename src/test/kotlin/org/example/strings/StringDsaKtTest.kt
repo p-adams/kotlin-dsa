@@ -18,9 +18,9 @@ class StringDsaKtTest : TestCase() {
     }
 
     fun testStrStr() {
-        assertEquals(0, strStr("anna", "ann"))
-        assertEquals(0, strStr("kayak", "kaya"))
-        assertEquals(3, strStr("javascript", "script"))
-        assertEquals(2, strStr("conformity", "form"))
+        assertEquals(1, strStr("anna", "nn"))
+        assertEquals(2, strStr("kayak", "yak"))
+        assertEquals(4, strStr("javascript", "script"))
+        assertEquals(3, strStr("conformity", "form"))
     }
 }
