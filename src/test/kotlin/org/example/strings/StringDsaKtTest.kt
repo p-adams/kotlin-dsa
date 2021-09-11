@@ -22,5 +22,6 @@ class StringDsaKtTest : TestCase() {
         assertEquals(2, strStr("kayak", "yak"))
         assertEquals(4, strStr("javascript", "script"))
         assertEquals(3, strStr("conformity", "form"))
+        assertEquals(-1, strStr("cheetah", "hat"))
     }
 }
