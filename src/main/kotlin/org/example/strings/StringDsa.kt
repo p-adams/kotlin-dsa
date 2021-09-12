@@ -133,7 +133,7 @@ private fun String.ssplit(delimiter: Char = ' '): MutableList<String> {
                 end = this.length - 1
         }
         if(i == end) {
-            result.add((this.subSequence(start, i + 1 ) as String).trim())
+            result.add((this.subSequence(start, i + 1 ) as String).trim(delimiter))
         }
     }
     return result
