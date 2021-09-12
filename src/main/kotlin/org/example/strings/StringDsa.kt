@@ -37,3 +37,18 @@ fun strStr(str1: String, str2: String): Int {
         }
     }
 }
+// reverse words in sentence by doing two passes
+fun wordReverse1(str: String): String {
+    var result = ""
+    var strs = str.split(" ")
+    for(s in strs.size - 1 downTo 0) {
+        result += strs[s] + if(s != 0) {
+            " "
+        } else {
+            ""
+        }
+    }
+
+    return result
+
+}
