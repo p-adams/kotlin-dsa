@@ -81,3 +81,28 @@ fun wordReverse2(s: String): String {
     }
     return result.toString()
 }
+
+// reverse words in-place
+// O(n) runtime, O(1) space
+fun wordReverse3(s: Array<Char>){
+    // reverse entire sentence
+    reverseHelper(s, 0, s.size)
+    var i = 0
+    var j = 0
+    while(j < s.size) {
+        if(j == s.size || s[j] == ' ') {
+            reverseHelper(s, i, j)
+            i = j + 1
+        }
+        j++
+    }
+}
+
+fun reverseHelper(s: Array<Char>, start: Int, end: Int) {
+    for(i in 0 until (end - start) / 2) {
+        val swap = s[start + i]
+        s[start + i] = s[end - i - 1]
+        s[end - i - 1] = swap
+    }
+}
+
