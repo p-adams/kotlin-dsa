@@ -1,5 +1,7 @@
 package org.example.strings
 
+import java.lang.StringBuilder
+
 fun isPalindrome(s: String): Boolean {
     var start = 0
     var finish = s.length - 1
@@ -51,4 +53,30 @@ fun wordReverse1(str: String): String {
 
     return result
 
+}
+
+// reverse words in sentence in single pass
+// hello world -> world hello
+fun wordReverse2(s: String): String {
+    var result = StringBuilder()
+    val start = 0
+    // optimistically set end to sentence entire length
+    // this may be updated in the loop
+    var end = s.length
+    for(ss in s.length - 1 downTo 0) {
+        // if we reach whitespace, that means we've reached the end of a word
+        // So we reset end to point to the index of the white space
+        if(s[ss] == ' ') {
+            end = ss
+            // if we reached the end of the sentence
+            // Or if previous char is whitespace
+        } else if(ss == 0 || s[ss - 1] == ' ') {
+            if (result.isNotEmpty()) {
+                // append whitespace to result string
+                result.append(' ')
+            }
+            result.append(s.subSequence(ss, end))
+        }
+    }
+    return result.toString()
 }

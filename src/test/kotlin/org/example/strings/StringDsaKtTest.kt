@@ -29,4 +29,9 @@ class StringDsaKtTest : TestCase() {
         assertEquals("World Hello", wordReverse1("Hello World"))
         assertEquals("dog lazy the over jumps fox brown quick The", wordReverse1("The quick brown fox jumps over the lazy dog"))
     }
+
+    fun testWordReverse2() {
+        assertEquals("World Hello", wordReverse2("Hello World"))
+        assertEquals("dog lazy the over jumps fox brown quick The", wordReverse2("The quick brown fox jumps over the lazy dog"))
+    }
 }
