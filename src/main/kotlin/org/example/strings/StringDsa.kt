@@ -40,6 +40,7 @@ fun strStr(str1: String, str2: String): Int {
     }
 }
 // reverse words in sentence by doing two passes
+// O(n2) runtime, O(n) space // allocates new array and does two passes (split counts as one)
 fun wordReverse1(str: String): String {
     var result = ""
     var strs = str.split(" ")
@@ -56,7 +57,7 @@ fun wordReverse1(str: String): String {
 }
 
 // reverse words in sentence in single pass
-// hello world -> world hello
+// O(n) runtime, O(n) space // single pass but allocates result string
 fun wordReverse2(s: String): String {
     var result = StringBuilder()
     val start = 0
