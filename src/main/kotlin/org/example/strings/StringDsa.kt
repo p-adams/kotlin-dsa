@@ -127,13 +127,11 @@ private fun String.ssplit(delimiter: Char = ' '): MutableList<String> {
     var end = this.length - 1
     for(i in this.indices) {
         if(this[i] == delimiter) {
-            end = i
-        } else if (i != 0 && this[i - 1] == delimiter) {
-                start = i
-                end = this.length - 1
+            result.add(this.subSequence(start, i) as String)
+            start = i + 1
         }
-        if(i == end) {
-            result.add((this.subSequence(start, i + 1 ) as String).trim(delimiter))
+        if(i == this.length - 1) {
+            result.add((this.subSequence(start, i + 1 ) as String))
         }
     }
     return result
