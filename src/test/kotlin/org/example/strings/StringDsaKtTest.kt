@@ -34,4 +34,9 @@ class StringDsaKtTest : TestCase() {
         assertEquals("World Hello", wordReverse2("Hello World"))
         assertEquals("dog lazy the over jumps fox brown quick The", wordReverse2("The quick brown fox jumps over the lazy dog"))
     }
+
+    fun testSSplit() {
+        assertEquals("bar foo", wordReverseSSplit("foo bar"))
+        assertEquals("baz bar foo", wordReverseSSplit("foo bar baz"))
+    }
 }

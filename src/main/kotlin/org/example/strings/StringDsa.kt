@@ -106,3 +106,37 @@ fun reverseHelper(s: Array<Char>, start: Int, end: Int) {
     }
 }
 
+fun wordReverseSSplit(str: String): String {
+    var result = ""
+    var strs = str.ssplit()
+    for(s in strs.size - 1 downTo 0) {
+        result += strs[s] + if(s != 0) {
+            " "
+        } else {
+            ""
+        }
+    }
+
+    return result
+
+}
+
+private fun String.ssplit(delimiter: Char = ' '): MutableList<String> {
+    val result = mutableListOf<String>()
+    var start = 0
+    var end = this.length - 1
+    for(i in this.indices) {
+        if(this[i] == delimiter) {
+            end = i
+        } else if (i != 0 && this[i - 1] == delimiter) {
+                start = i
+                end = this.length - 1
+        }
+        if(i == end) {
+            result.add((this.subSequence(start, i + 1 ) as String).trim())
+        }
+    }
+    return result
+}
+
+
