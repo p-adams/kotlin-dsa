@@ -136,5 +136,38 @@ private fun String.ssplit(delimiter: Char = ' '): MutableList<String> {
     }
     return result
 }
+// convert string to integer
+fun atoi(s: String): Int {
+    val maxDiv10 = Integer.MAX_VALUE / 10
+    var start = 0
+    var end = s.length
+    // ignore leading whitespace
+    while(start < end && Character.isWhitespace(s[start])) {
+        start++
+    }
+    // assign correct sign
+    val sign = if(start < end && s[start] == '+') {
+        start++
+        1
+    } else if (start < end && s[start] == '-') {
+        start++
+        -1
+    } else {
+        1
+    }
+    // initialize result
+    var result = 0
+    while(start < end && Character.isDigit(s[start])) {
+        val digit = Character.getNumericValue(s[start])
+        // handle possible overflow
+        if(result > maxDiv10 || result == maxDiv10 && digit >= 8) {
+            return if(sign == 1) Int.MAX_VALUE else Int.MIN_VALUE
+        }
+        result = result * 10 + digit
+        start++
+    }
+
+    return sign * result
+}
 
 

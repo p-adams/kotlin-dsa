@@ -39,4 +39,11 @@ class StringDsaKtTest : TestCase() {
         assertEquals("bar foo", wordReverseSSplit("foo bar"))
         assertEquals("baz bar foo", wordReverseSSplit("foo bar baz"))
     }
+
+    fun testAtoi() {
+        assertEquals(0, atoi(""))
+        assertEquals(10304, atoi("10304"))
+        assertEquals(-10304, atoi("-10304"))
+        assertEquals(2147483647, atoi("1030410304103041030410304103041030410304"))
+    }
 }
