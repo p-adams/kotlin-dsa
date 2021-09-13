@@ -46,4 +46,12 @@ class StringDsaKtTest : TestCase() {
         assertEquals(-10304, atoi("-10304"))
         assertEquals(2147483647, atoi("1030410304103041030410304103041030410304"))
     }
+
+    fun testIsNumeric() {
+        assertEquals(true, isNumeric("11"))
+        assertEquals(true, isNumeric("1.1"))
+        assertEquals(true, isNumeric(".1"))
+        assertEquals(false, isNumeric("IV"))
+        assertEquals(false, isNumeric("1 1"))
+    }
 }

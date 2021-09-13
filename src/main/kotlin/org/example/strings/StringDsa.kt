@@ -169,5 +169,41 @@ fun atoi(s: String): Int {
 
     return sign * result
 }
+// validate that string is numeric (i.e. whole number or decimal
+fun isNumeric(s: String): Boolean {
+    var numeric = false
+    var start = 0
+    var end = s.length
+    // ignore leading whitespace
+    while(start < end && Character.isWhitespace(s[start])) {
+        start++
+    }
+    // validate for whole number
+    while(start < end && Character.isDigit(s[start])) {
+        numeric = true
+        start++
+    }
+    // validate for decimal
+    if(start < end && s[start] == '.') {
+        start++
+        while(start < end && Character.isDigit(s[start])) {
+            start++
+            numeric = true
+        }
+    }
+
+
+    // ignore sign
+    while(start < end && (s[start] == '+' || s[start] == '-')) {
+        start++
+    }
+
+
+    // ignore remaining whitespace
+    while(start < end && Character.isWhitespace(s[start])) {
+        start++
+    }
+    return numeric && start == end
+}
 
 
