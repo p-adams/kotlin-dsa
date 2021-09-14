@@ -1,6 +1,7 @@
 package org.example.strings
 
 import java.lang.StringBuilder
+import kotlin.math.max
 
 fun isPalindrome(s: String): Boolean {
     var start = 0
@@ -204,6 +205,22 @@ fun isNumeric(s: String): Boolean {
         start++
     }
     return numeric && start == end
+}
+// return length of longest substring without repeating characters
+// O(n2) runtime O(1) space
+fun countOfLongestSubStrWithoutRepeatingChars(s: String): Int {
+    val charsSeen = MutableList<Boolean>(256) {i -> false}
+    var i = 0
+    var maxm = 0
+    for(j in s.indices) {
+        while(charsSeen[s[j].code]) {
+            charsSeen[s[i].code] = false
+            i++
+        }
+        charsSeen[s[j].code] = true
+        maxm = max(j - i + 1, maxm)
+    }
+    return maxm
 }
 
 

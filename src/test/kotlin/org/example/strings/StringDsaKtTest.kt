@@ -54,4 +54,9 @@ class StringDsaKtTest : TestCase() {
         assertEquals(false, isNumeric("IV"))
         assertEquals(false, isNumeric("1 1"))
     }
+
+    fun testCountOfLongestSubStrWithoutRepeatingChars() {
+        assertEquals(3, countOfLongestSubStrWithoutRepeatingChars("abcabcbb"))
+        assertEquals(1, countOfLongestSubStrWithoutRepeatingChars("aaaa"))
+    }
 }
